@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>06 - BOOLEANS and IF-STATEMENTS</title>
+  </head>
+<body>
+
+  <script>
+    /*
+    console.log(typeof true);
+    console.log(3<5);
+
+    console.log(5 === '5.00');
+
+
+    if(false){
+      console.log('hello');
+    }else{
+      console.log('else');
+    }
+
+    const age = 15;
+
+    if(age >= 16){
+      console.log('you can drive');
+    }else if (age >= 14){
+      console.log('almost there');
+    }else{
+      console.log("you can't drive");
+    }
+    */
+    /*
+
+    console.log(true && true);
+    console.log(0.2 >= 0 && 0.2 < 1/3); // and
+
+    console.log(true || false); // or
+
+    console.log(!true); // not
+
+    */
+
+    // FALSY VALUES = false ; 0 ; '' ; NaN ; undefined ; null ;
+    // TRUTHY VALUES = all the others;
+
+    /*
+    if (0){
+      console.log('truthy');
+    }
+
+    const cartQuantity = 5;
+
+    if (cartQuantity){
+      console.log('Cart has products');
+    }
+    console.log(!0);
+
+    console.log('text' / 5);
+
+    let variable1;
+    console.log(variable1);
+    */
+
+    const result = 'a' ? 'truthy' : 'falsy';
+    console.log(result);
+
+    const message = 5 && 'hello'; // AND OPERATOR II = verifica se antes do && é false, se nao, mostra o valor depois do &&
+    console.log(message);
+
+    const currency = undefined || 'USD'; // OR OPERATOR II = verifica se antes do || é false, se nao, mostra o valor depois do ||
+    console.log(currency);
+
+  </script>
+</body>
+</html>
