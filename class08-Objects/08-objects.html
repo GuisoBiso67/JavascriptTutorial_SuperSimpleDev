@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>08 - OBJECTS</title>
+  </head>
+<body>
+
+  <script>
+    /*
+    const product = {
+      name: 'socks',
+      price: 1090
+    };
+    console.log(typeof product);
+    console.log(product.name);
+    console.log(product.price);
+
+    product.name = 'cotton socks';
+    console.log(product);
+
+    product.newProperty = true;
+    console.log(product);
+
+    delete product.newProperty;
+    console.log(product);
+    */
+
+    /*
+    const product2 = {
+      name: 'shirt', // dot notation (default);
+      ['delivery-time']: '1 day', // bracket notation;
+      rating: {
+        stars: 4.5,
+        count: 87, // nested object: object inside object;
+      },
+      fun: function function1(){
+        console.log('function inside object');
+      } // function inside object = method;
+    };
+    console.log(product2);
+    console.log(product2.name);
+    console.log(product2['name']);
+    console.log(product2['delivery-time']);
+
+    console.log(product2.rating.count);
+
+    product2.fun();
+
+    console.log(typeof console.log);
+
+    // JSON = similar to JS object, but with less features (doesn't support functions and we need to use double quotes:""); JSON is universal; JSOn is used to store data;
+
+    console.log(JSON.stringify(product2)); // convert JS object to JSON
+    console.log(typeof JSON.stringify(product2));
+
+    const jsonstring = JSON.stringify(product2);
+
+    console.log(JSON.parse(jsonstring)); // convert JSON to JS object
+    */
+
+    console.log('hello'.length);
+    console.log('hello'.toUpperCase());
+
+    const object1 = {
+      message: 'hello',
+    };
+
+    const object2 = object1; // copy by reference;
+
+    object1.message = 'Good job!';
+    console.log(object1); // even using 'const', we can change the value of a object;
+    console.log(object2);
+
+    const object3 = {
+      message: 'Good job!',
+    }
+
+    // compare two objects is compare two references
+    console.log(object3 === object1);
+    console.log(object2 === object1);
+
+    const object4 = {
+      message: 'Good job!',
+      price: 799,
+    }
+    //const message = object4.message;
+    const { message, price } = object4; // destructuring shortcut : easier way to take properties out of an object;
+    console.log(message);
+    console.log(price);
+
+    const object5 = {
+      //message: message,
+      message, // shorthand property : if the property and the variable name are the same, we can tip one;
+      
+      /*method: function function1(){
+        console.log('method');
+      },*/
+      method(){
+        console.log('method');
+      } // shorthand method : does the same as above
+    };
+    console.log(object5);
+    object5.method();
+  </script>
+</body>
+</html>
