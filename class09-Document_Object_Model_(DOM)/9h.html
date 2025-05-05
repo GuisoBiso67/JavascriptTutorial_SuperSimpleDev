@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>9g - DOM projects</title>
+  </head>
+<body>
+  <input placeholder="Type something..." id="js-input1" onkeyup="realTimeUpdate()">
+  <p id="js-typing-text"></p>
+
+  <script>
+    function realTimeUpdate(){
+      const inputStringElement = document.querySelector('#js-input1');
+
+      let text1 = inputStringElement.value;
+
+      document.querySelector('#js-typing-text')
+        .innerHTML = `${text1}`;
+    }
+  </script>
+</body>
+</html>

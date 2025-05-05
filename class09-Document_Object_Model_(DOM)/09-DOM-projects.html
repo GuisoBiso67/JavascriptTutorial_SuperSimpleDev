@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>09 - DOM projects</title>
+  </head>
+<body>
+  <p>Youtube Subscribe Button</p>
+  <button class="js-subscribe-button" onclick="subscribe()">Subscribe</button>
+
+  <p>Rock Paper Scissors</p>
+  <a href="./09-rock-paper-scissors.html" target="_blank">Click Here</a>
+
+  <p>Amazon Shipping Calculator</p>
+  <p>Orders under $40 = +$10 shipping</p>
+  <p>Orders over $40 = FREE shipping</p>
+  <input placeholder="Cost of Order" id="js-cost-input" onkeydown="handleCostKeyDown(event)">
+  <button onclick="calculateTotal()">Calculate</button>
+  <p id="js-total-cost"></p>
+
+  <script>
+
+    String(25); // convert number to string;
+    console.log('25' - 5); // type coercion
+    console.log('25' + 5); // here, js converts number 5 to string '5';
+
+    window.document // = document
+    window.console.log('window'); // = console.log
+    window.alert // = alert
+
+    function subscribe(){
+      const buttonElement = document.querySelector('.js-subscribe-button');
+      // innerText gets only the text, without spaces;
+      if(buttonElement.innerText === 'Subscribe'){
+        buttonElement.innerHTML = 'Subscribed';
+        buttonElement.style.backgroundColor = 'red';
+      }else{
+        buttonElement.innerHTML = 'Subscribe';
+        buttonElement.style.backgroundColor = '';
+      }
+    }
+
+    function handleCostKeyDown(event){
+      if(event.key==='Enter'){
+        calculateTotal();
+      }
+    }
+
+    function calculateTotal(){
+      const inputElement = document.querySelector('#js-cost-input');
+      let cost = Number(inputElement.value); // convert string to number;
+      if(cost < 40){
+        cost += 10;
+      }
+      document.querySelector('#js-total-cost')
+        .innerHTML = `Cost: $${cost}`;
+    }
+  </script>
+</body>
+</html>
