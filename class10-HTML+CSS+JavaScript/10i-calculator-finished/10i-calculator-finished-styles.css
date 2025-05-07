@@ -1,0 +1,113 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  background-color: black;
+  color: white;
+}
+
+button.numbers-button{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  background-color: #374544;
+  color: black;
+  border: none;
+  border-radius: 100%;
+  padding: 20px 25px;
+  cursor: pointer;
+}
+
+button.operators-button{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  background-color: orange;
+  color: black;
+  border: none;
+  border-radius: 100%;
+  padding: 20px 25px;
+  cursor: pointer;
+}
+
+button.clear-button{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  background-color: #374544;
+  color: black;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+button.equal-button{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  background-color: #374544;
+  color: black;
+  border: none;
+  border-radius: 100%;
+  padding: 20px 25px;
+  cursor: pointer;
+}
+
+p.visor{
+  padding: 30px 20px;
+  border: 2px solid white;
+  text-align: left;
+  width: 240px;
+  border-radius: 50px;
+}
+/* -------------------- --------------------*/
+button#sum-button{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  background-color: orange;
+  color: black;
+  border: none;
+  border-radius: 100%;
+  padding: 20px 25px;
+  cursor: pointer;
+}
+
+button#minus-button{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  background-color: orange;
+  color: black;
+  border: none;
+  border-radius: 100%;
+  padding: 20px 28px;
+  cursor: pointer;
+}
+
+button#multiply-button{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  background-color: orange;
+  color: black;
+  border: none;
+  border-radius: 100%;
+  padding: 20px 28px;
+  cursor: pointer;
+}
+
+button#divide-button{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  background-color: orange;
+  color: black;
+  border: none;
+  border-radius: 100%;
+  padding: 20px 28px;
+  cursor: pointer;
+}
+
+button#dot-button{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  background-color: #374544;
+  color: black;
+  border: none;
+  border-radius: 100%;
+  padding: 20px 28px;
+  cursor: pointer;
+}

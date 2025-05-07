@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>09 - DOM projects</title>
+
+    <style>
+      body{
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .subscribe-button{
+        border: 1px solid black;
+        background-color: black;
+        color: white;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-weight: bold;
+        border-radius: 50px;
+        cursor: pointer;
+        margin-bottom: 30px;
+      }
+
+      .is-subscribed{
+        background-color: red;
+        color: white;
+        border: 1px solid black;
+      }
+
+      .cost-input{
+        font-size: 15px;
+        padding: 10px;
+      }
+
+      .calculate-button{
+        background-color: green;
+        color: white;
+        border: 1px solid gray;
+        padding: 11px 15px;
+        font-size: 15px;
+        cursor: pointer;
+      }
+
+      .invalid-value{
+        color: red;
+      }
+    </style>
+  </head>
+<body>
+  <p>Youtube Subscribe Button</p>
+  <button class="js-subscribe-button subscribe-button" onclick="subscribe()">Subscribe</button>
+
+  <p>Amazon Shipping Calculator</p>
+  <p>Orders under $40 = +$10 shipping</p>
+  <p>Orders over $40 = FREE shipping</p>
+  <input placeholder="Cost of Order" id="js-cost-input" class="cost-input" onkeydown="handleCostKeyDown(event)">
+  <button onclick="calculateTotal()" class="calculate-button">Calculate</button>
+  <p class="js-total-cost js-error-message"></p>
+
+  <script>
+
+    function subscribe(){
+      const buttonElement = document.querySelector('.js-subscribe-button');
+      // innerText gets only the text, without spaces;
+      if(buttonElement.innerText === 'Subscribe'){
+        buttonElement.innerHTML = 'Subscribed';
+        buttonElement.classList.add('is-subscribed');
+      }else{
+        buttonElement.innerHTML = 'Subscribe';
+        buttonElement.classList.remove('is-subscribed');
+      }
+    }
+
+    function handleCostKeyDown(event){
+      if(event.key==='Enter'){
+        calculateTotal();
+      }
+    }
+
+    function calculateTotal(){
+      const inputElement = document.querySelector('#js-cost-input');
+      let cost = Number(inputElement.value); // convert string to number;
+
+      const errorMessageElement = document.querySelector('.js-error-message');
+      if(cost === 0){
+        errorMessageElement.classList.add('invalid-value');
+        document.querySelector('.js-error-message')
+          .innerHTML = `Error: Insert a valid number`;
+      }
+      else if(cost < 0){
+        errorMessageElement.classList.add('invalid-value');
+        document.querySelector('.js-error-message')
+          .innerHTML = `Error: cost cannot be less than $0.01`;
+      }else{
+        if(cost < 40){
+          cost += 10;
+        }
+        errorMessageElement.classList.remove('invalid-value');
+        document.querySelector('.js-total-cost')
+          .innerHTML = `Cost: $${cost}`;
+      }  
+    }
+  </script>
+</body>
+</html>

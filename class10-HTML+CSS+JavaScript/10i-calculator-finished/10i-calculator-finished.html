@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>CALCULATOR</title>
+  <link rel="stylesheet" href="10i-calculator-finished-styles.css">
+  </head>
+<body>
+
+  <p id="js-calculation" class="visor"></p>
+
+  <p>
+    <button onclick="updateCalculation('1');" class="numbers-button">1</button>
+    <button onclick="updateCalculation('2');" class="numbers-button">2</button>
+    <button onclick="updateCalculation('3');" class="numbers-button">3</button>
+    <button onclick="updateCalculation('+');" id="sum-button">+</button>
+  </p>
+
+  <p>
+    <button onclick="updateCalculation('4');" class="numbers-button">4</button>
+    <button onclick="updateCalculation('5');" class="numbers-button">5</button>
+    <button onclick="updateCalculation('6');" class="numbers-button">6</button>
+    <button onclick="updateCalculation('-');" id="minus-button">-</button>
+  </p>
+
+  <p>
+    <button onclick="updateCalculation('7');" class="numbers-button">7</button>
+    <button onclick="updateCalculation('8');" class="numbers-button">8</button>
+    <button onclick="updateCalculation('9');" class="numbers-button">9</button>
+    <button onclick="updateCalculation('*');" id="multiply-button">*</button>
+  </p>
+
+  <p>
+    <button onclick="updateCalculation('0');" class="numbers-button">0</button>
+    <button onclick="updateCalculation('.');" id="dot-button">.</button>
+    <button onclick="updateCalculation('=')" class="equal-button">=</button>
+    <button onclick="updateCalculation('/');" id="divide-button">/</button>
+  </p>
+
+  <p>
+    <button onclick="updateCalculation('');" class="clear-button">clear</button>
+  </p>
+  
+  <script src="10i-calculator-finished.js"></script>
+</body>
+</html>
