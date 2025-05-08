@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>11L</title>
+    <style>
+      
+    </style>
+  </head>
+<body>
+  
+
+  <script>
+    let numbers = [-2,3,-5,7,10];
+
+    function minMax(nums){
+      let min = nums[0];
+      let max = nums[0];
+
+      for(let i=1;i<nums.length;i++){
+        if(min > nums[i]){
+          min = nums[i];
+        }
+        if(max < nums[i]){
+          max = nums[i];
+        }
+      }
+
+      console.log('Max: '+ max);
+      console.log('Min: '+ min);
+    }
+
+    minMax(numbers);
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <script>
+      function countWords(words) {
+        const result = {};
+
+        for (let i = 0; i < words.length; i++) {
+          const word = words[i];
+          // result[word] adds/accesses a property using whatever is
+          // saved inside the 'word' variable.
+          // If word = 'apple', result[word] will do result['apple']
+          // If word = 'grape', result[word] will do result['grape']
+          if (!result[word]) {
+            result[word] = 1; // if the word isn't in the object 'result', it adds the word with 1;
+          } else {
+            result[word]++; // else, it adds 1 to an existing word in the object;
+          }
+        }
+        return result;
+      }
+
+      console.log(countWords(['apple', 'grape', 'apple', 'apple']));
+
+      /*
+        this is the solution on the github of the creator. I couldn't solve the exercise.
+      */
+    </script>
+  </body>
+</html>
