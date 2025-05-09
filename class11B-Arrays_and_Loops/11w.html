@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <script>
+      let array = ['apple', 'grape', 'pineapple', 'apple'];
+      console.log(unique(array));
+
+      function findIndex(array, word) {
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] === word) {
+            // Instead of creating an accumulator
+            // variable and updating it in the loop,
+            // we can just return i directly, when
+            // we find it since this is a function.
+            return i;
+          }
+        }
+
+        // If the function has not returned by now,
+        // logically that means the word must not
+        // exist in the array, so we'll return -1.
+        return -1;
+      }
+
+      function unique(array){
+        let arrayUnique = [];
+
+        for(let i=0;i<array.length;i++){
+          const word = array[i];
+
+          if(findIndex(arrayUnique,word) === -1){
+            arrayUnique.push(word);
+          }
+        }
+
+        return arrayUnique;
+      }
+
+      // 
+    </script>
+  </body>
+</html>
