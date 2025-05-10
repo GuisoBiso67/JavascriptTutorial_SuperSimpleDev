@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>App</title>
+  </head>
+  <body>
+    <button class="js-add-button" onclick="updateMessage(1);">Add</button>
+    <button class="js-remove-button" onclick="updateMessage(-1);">Remove</button>
+    <script>
+      let isNewMessage = false;
+      let numberOfMessages = 1;
+      let interval_ID = null;
+
+      function updateMessage(number){
+        numberOfMessages+=number;
+        changeTitle();
+      };
+      
+      function changeTitle(){
+        if(numberOfMessages <= 0){
+          numberOfMessages = 0;
+          clearInterval(interval_ID);
+          interval_ID = null;
+          document.title = 'App';
+        }else{
+          if(!interval_ID){
+            startTitleInterval();
+          }
+        }
+      }
+
+      function startTitleInterval(){
+        interval_ID = setInterval(function(){
+        document.title = isNewMessage ? 'App' : '('+ numberOfMessages + ') new messages';
+          isNewMessage = !isNewMessage;
+        },1000);
+      };
+
+      changeTitle();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>12 - ADVANCED FUNCTIONS</title>
+    <style>
+      
+    </style>
+  </head>
+<body>
+  
+
+  <script>
+
+    // RULE: functions are values
+
+    /*
+    function greeting(){
+      console.log('hello');
+    }
+    greeting();
+
+    const num = 2;
+    const function1 = function(){ // anonymous function = function without a name;
+      console.log('hello 2');
+    };
+    console.log(function1);
+    console.log(typeof function1);
+    function1();
+
+    const object1 = {
+      num: 2,
+      fun: function(){
+        console.log('hello 3'); // method
+      }
+    };
+    object1.fun();
+
+    function display(param){
+      console.log(param);
+    }
+    display(2);
+
+    function run(param){
+      param();
+    }
+    run(function(){
+      console.log('hello 4'); // callback function
+    });
+    */
+
+    /*
+    setTimeout(function(){ // asynchronous code
+      console.log('timeout');
+      console.log('timeout 2');
+    }, 3000); // wait 3 seconds and display the function;
+    console.log('next line');
+
+    setInterval(function(){
+      console.log('interval'); // execute the function every 3 seconds;
+    }, 3000);
+    console.log('next line 2');
+    */
+
+    [
+      'make dinner',
+      'wash dishes',
+      'watch TV',
+    ].forEach(function(value,index){
+
+      if(value === 'wash dishes'){
+        return;
+      }
+      // if you need to use 'break', it's better to use the regular for loop instead of forEach();
+      console.log(index);
+      console.log(value);
+    }); // loop through this array;
+
+    
+  </script>
+</body>
+</html>

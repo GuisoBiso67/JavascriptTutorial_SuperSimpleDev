@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <button class="js-button" onclick="
+      displayMessage();
+    ">Add to cart</button>
+    
+    <p class="js-message"></p>
+
+    <script>
+      let timeOut_ID;
+
+      function displayMessage() {
+        const messageElement = document.querySelector('.js-message');
+        messageElement.innerHTML = 'Added';
+
+        clearTimeout(timeOut_ID);
+
+        timeOut_ID = setTimeout(function() {
+          messageElement.innerHTML = '';
+        }, 2000);
+      }
+
+      // this exercise doesn't make any sense, wtf
+    </script>
+  </body>
+</html>
