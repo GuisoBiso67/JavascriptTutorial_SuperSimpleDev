@@ -1,3 +1,6 @@
+import {cart} from '../data/cart.js';
+//import {products} from '../data/products.js'
+
 let productsHTML = '';
 
 products.forEach((product) => {
@@ -88,6 +91,6 @@ document.querySelectorAll('.js-add-to-cart')
       addedProductElement.classList.add("added-product-ok");
       setTimeout(() => {
         addedProductElement.classList.remove("added-product-ok");
-      }, 2000);
+      }, 1500);
     });
   })
