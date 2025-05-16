@@ -132,6 +132,12 @@ document.querySelectorAll('.js-save-quantity-link')
       const productId = link.dataset.productId;
       // console.log(productId);
       const newProductQuantity = Number(document.querySelector(`.js-quantity-input-${productId}`).value);
+
+      if(newProductQuantity < 0 || newProductQuantity >=1000){
+        alert('Value must be between 0 and 1000');
+        return;
+      }
+      
       //console.log(newProductQuantity);
       document.querySelector(`.js-cart-quantity-${productId}`).innerHTML = newProductQuantity;
       updateQuantity(productId,newProductQuantity);
