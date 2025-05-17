@@ -4,13 +4,7 @@ import formatCurrency from '../utils/money.js'; // default export
 import {hello} from 'https://unpkg.com/supersimpledev@1.0.1/hello.esm.js';
 import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js'; // default export
 import {deliveryOptions, getDeliveryOption} from '../../data/deliveryOptions.js';
-
-hello();
-
-const today = dayjs();
-const deliveryDate = today.add(7, 'days');
-console.log(deliveryDate);
-console.log(deliveryDate.format('dddd, MMMM D'));
+import { renderPaymentSummary } from './paymentSummary.js';
 
 export function renderOrderSummary(){
   let cartSummaryHTML = '';
@@ -21,7 +15,7 @@ export function renderOrderSummary(){
     const matchingProduct = getProduct(productId);
 
     const deliveryOptionId = cartItem.deliveryOptionId;
-    
+
     const deliveryOption = getDeliveryOption(deliveryOptionId);
 
     const today = dayjs();
@@ -129,12 +123,12 @@ export function renderOrderSummary(){
       link.addEventListener('click', () => {
         const productId = link.dataset.productId;
         removeFromCart(productId);
-        console.log(cart);
 
         const container = document.querySelector(`.js-cart-item-container-${productId}`);
         container.remove();
         updateCartQuantity();
 
+        renderPaymentSummary();
         renderOrderSummary();
       });
     });
@@ -158,14 +152,26 @@ export function renderOrderSummary(){
           alert('Value must be between 0 and 1000');
           return;
         }
-        
-        document.querySelector(`.js-cart-quantity-${productId}`).innerHTML = newProductQuantity;
-        updateQuantity(productId,newProductQuantity);
 
-        const container = document.querySelector(`.js-cart-item-container-${productId}`);
-        container.classList.remove("is-editing-quantity");
+        if(newProductQuantity === 0){
+          removeFromCart(productId);
 
-        renderOrderSummary();
+          const container = document.querySelector(`.js-cart-item-container-${productId}`);
+          container.remove();
+          updateCartQuantity();
+
+          renderPaymentSummary();
+          renderOrderSummary();
+        }else{
+          document.querySelector(`.js-cart-quantity-${productId}`).innerHTML = newProductQuantity;
+          updateQuantity(productId,newProductQuantity);
+
+          const container = document.querySelector(`.js-cart-item-container-${productId}`);
+          container.classList.remove("is-editing-quantity");
+
+          renderPaymentSummary();
+          renderOrderSummary();
+        }
       });
     });
 
@@ -175,6 +181,7 @@ export function renderOrderSummary(){
         const {productId, deliveryOptionId} = element.dataset;
         updateDeliveryOption(productId, deliveryOptionId);
         
+        renderPaymentSummary();
         renderOrderSummary();
       });
     });
