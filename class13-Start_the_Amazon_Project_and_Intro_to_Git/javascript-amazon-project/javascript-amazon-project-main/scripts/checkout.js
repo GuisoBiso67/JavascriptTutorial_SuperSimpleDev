@@ -120,7 +120,6 @@ document.querySelectorAll('.js-update-link')
   .forEach((link) => {
     link.addEventListener('click', () => {
       const productId = link.dataset.productId;
-      // console.log(productId);
       const container = document.querySelector(`.js-cart-item-container-${productId}`);
       container.classList.add("is-editing-quantity");
     });
@@ -130,7 +129,6 @@ document.querySelectorAll('.js-save-quantity-link')
   .forEach((link) => {
     link.addEventListener('click', () => {
       const productId = link.dataset.productId;
-      // console.log(productId);
       const newProductQuantity = Number(document.querySelector(`.js-quantity-input-${productId}`).value);
 
       if(newProductQuantity < 0 || newProductQuantity >=1000){
@@ -138,7 +136,6 @@ document.querySelectorAll('.js-save-quantity-link')
         return;
       }
       
-      //console.log(newProductQuantity);
       document.querySelector(`.js-cart-quantity-${productId}`).innerHTML = newProductQuantity;
       updateQuantity(productId,newProductQuantity);
 
