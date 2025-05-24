@@ -18,6 +18,6 @@ describe('test suite: formatCurrency', () => {
   });
 
   it('negative values', () => {
-    expect(formatCurrency(-10)).toEqual(0);
+    expect(formatCurrency(-1000)).toEqual('-10.00');
   });
 });
