@@ -58,6 +58,36 @@ class Clothing extends Product{
   }
 }
 
+/*
+const date = new Date();
+console.log(date);
+console.log(date.toLocaleTimeString());
+*/
+
+/*
+console.log(this);
+const object2 = {
+  a: 2,
+  b: this.a, // 'this' points to undefined if it is outside a method;
+}
+*/
+
+/*
+function logThis(){
+  console.log(this);
+};
+logThis(); // here we can't chage the value of 'this';
+logThis.call('hello'); // the feature 'call' can change the value of 'this';
+
+this
+const object3 = {
+  method: () => {
+    console.log(this); // arrow functions do not change the value of 'this';
+  }
+};
+object3.method();
+*/
+
 export const products = [
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
