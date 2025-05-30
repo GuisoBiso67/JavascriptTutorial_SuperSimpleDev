@@ -1,14 +1,14 @@
 class Cart{
-  cartItems;
-  localStorageKey;
+  cartItems; // public property;
+  #localStorageKey; // private property;
 
   constructor(localStorageKey){
-    this.localStorageKey = localStorageKey;
-    this.loadFromStorage();
+    this.#localStorageKey = localStorageKey;
+    this.#loadFromStorage();
   }
 
-  loadFromStorage(){
-    this.cartItems = JSON.parse(localStorage.getItem(this.localStorageKey)); // 'this' points to cartItems, no matter what name 'cartItems' has or if it changes; 
+  #loadFromStorage(){ // private method
+    this.cartItems = JSON.parse(localStorage.getItem(this.#localStorageKey)); // 'this' points to cartItems, no matter what name 'cartItems' has or if it changes; 
 
     if (!this.cartItems){
       this.cartItems = [{
@@ -24,7 +24,7 @@ class Cart{
   }
 
   saveToStorage(){
-    localStorage.setItem(this.localStorageKey, JSON.stringify(this.cartItems));
+    localStorage.setItem(this.#localStorageKey, JSON.stringify(this.cartItems));
   }
 
   addToCart(productId){
@@ -96,6 +96,8 @@ class Cart{
 // each object here is a 'instance';
 const cart = new Cart('cart-oop'); // 'new' generates a new object with the class;
 const businessCart = new Cart('cart-business'); // the parameter here is inside the constructor;
+
+//cart.#localStorageKey = 'test';
 
 console.log(cart);
 console.log(businessCart);
