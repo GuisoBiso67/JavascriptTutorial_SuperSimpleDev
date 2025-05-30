@@ -82,7 +82,7 @@ function Cart(localStorageKey){
     updateDeliveryOption(productId, deliveryOptionId) {
       let matchingItem;
 
-      this.cartItem.forEach((cartItem) => {
+      this.cartItems.forEach((cartItem) => { // the only change is the 's' on 'cartItems';
         if(productId === cartItem.productId){
           matchingItem = cartItem;
         }
