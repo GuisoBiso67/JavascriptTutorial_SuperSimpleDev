@@ -45,6 +45,7 @@ products.forEach((product) => {
 
       ${product.extraInfoHTML()} <!-- POLYMORPHISM = use a method without knowing the class -->
 
+
       <div class="product-spacer"></div>
 
       <div class="added-to-cart js-added-${product.id}-to-cart">
