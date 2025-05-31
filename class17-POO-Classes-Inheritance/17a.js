@@ -2,6 +2,9 @@ class Car {
   #brand;
   #model;
   speed;
+  isTrunkOpen;
+
+  // 17g = if we make speed property private, the code cannot run!
 
   constructor(cars){
     this.#brand = cars.brand;
