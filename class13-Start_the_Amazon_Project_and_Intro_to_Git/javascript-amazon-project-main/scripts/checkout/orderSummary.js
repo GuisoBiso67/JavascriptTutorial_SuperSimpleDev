@@ -1,11 +1,13 @@
 import {cart, removeFromCart, calculateCartQuantity, updateQuantity, updateDeliveryOption} from '../../data/cart.js';
-import {products, getProduct} from '../../data/products.js';
+import {products, getProduct, loadProducts} from '../../data/products.js';
 import formatCurrency from '../utils/money.js'; // default export
 import {hello} from 'https://unpkg.com/supersimpledev@1.0.1/hello.esm.js';
 import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js'; // default export
 import {deliveryOptions, getDeliveryOption, calculateDeliveryDate} from '../../data/deliveryOptions.js';
 import { renderPaymentSummary } from './paymentSummary.js';
 import { renderCheckoutHeader } from './checkoutHeader.js';
+
+loadProducts(renderOrderSummary);
 
 export function renderOrderSummary(){
   let cartSummaryHTML = '';
