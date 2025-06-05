@@ -121,7 +121,7 @@ export function loadProducts(fun){ // callback
         return new Clothing(productDetails);
       }
       else if(productDetails.type === 'appliance'){
-        return new Appliance(productDetails);
+        return new Appliance(productDetails); // do not work, becouse the products web page doesn't have the characteristics
       }
       return new Product(productDetails);
     });
