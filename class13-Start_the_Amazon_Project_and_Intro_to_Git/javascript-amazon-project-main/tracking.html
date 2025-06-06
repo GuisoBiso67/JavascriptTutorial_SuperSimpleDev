@@ -88,5 +88,12 @@
         </div>
       </div>
     </div>
+
+    <script>
+      const url = new URL(window.location.href);
+      console.log(url.searchParams.get('orderId'));
+      console.log(url.searchParams.get('productId'));
+      // exemple = http://127.0.0.1:5500/class13-Start_the_Amazon_Project_and_Intro_to_Git/javascript-amazon-project-main/tracking.html?orderId=123&productId=456;
+    </script>
   </body>
 </html>
