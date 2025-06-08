@@ -36,6 +36,7 @@ showGreeting();
 */
 
 // 18D
+/*
 async function showGreeting(){
   try{
     const response = await fetch('https://supersimplebackend.dev/greeting', {
@@ -54,4 +55,34 @@ async function showGreeting(){
     console.log(`Error ${error}`);
   }
 };
+showGreeting();
+*/
+
+// 18G
+async function showGreeting(){
+  try{
+    const response = await fetch('https://supersimplebackend.dev/greeting', {
+      method: 'POST',
+      header: {
+        'Content-Type':'application/json',
+      }
+    });
+
+    if(response.status >= 400){
+      throw response;
+    }
+
+    const data = await response.text();
+    console.log(data);
+
+  }catch(error){
+    if(error.status === 400){
+      const errorMessage = await error.json();
+      console.log(errorMessage);
+    }else{
+      console.log(`Network Error`);
+    } 
+  }
+}
+
 showGreeting();
